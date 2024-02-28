@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ws-employee-soapcxf-master:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ws_employee_soapcxf_master_jar</output-path>
+    <root id="archive" name="ws-employee-soapcxf-master.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/ws-employee-soapcxf-master/src/main/resources/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

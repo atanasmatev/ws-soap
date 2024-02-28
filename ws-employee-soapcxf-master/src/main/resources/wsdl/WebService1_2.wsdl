@@ -1,0 +1,49 @@
+<wsdl:definitions xmlns:impl="http://SOAPT/WebService1_2.tws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:intf="http://SOAPT/WebService1_2.tws" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://SOAPT/WebService1_2.tws">
+<wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://SOAPT/WebService1_2.tws">
+<element name="operation">
+<complexType>
+<sequence>
+<element name="user" type="xsd:string"/>
+</sequence>
+</complexType>
+</element>
+<element name="operationResponse">
+<complexType>
+<sequence>
+<element name="response" type="xsd:string"/>
+</sequence>
+</complexType>
+</element>
+</schema>
+</wsdl:types>
+<wsdl:message name="operationResponse">
+<wsdl:part name="parameters" element="impl:operationResponse"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="operationRequest">
+<wsdl:part name="parameters" element="impl:operation"> </wsdl:part>
+</wsdl:message>
+<wsdl:portType name="WebService1_2PortType">
+<wsdl:operation name="operation">
+<wsdl:input name="operationRequest" message="impl:operationRequest"> </wsdl:input>
+<wsdl:output name="operationResponse" message="impl:operationResponse"> </wsdl:output>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="soap12WebService1_2SoapSoapBinding" type="impl:WebService1_2PortType">
+<wsdlsoap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="operation">
+<wsdlsoap12:operation soapAction="http://SOAPT/WebService1_2.tws/operation"/>
+<wsdl:input name="operationRequest">
+<wsdlsoap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="operationResponse">
+<wsdlsoap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="WebService1_2">
+<wsdl:port name="soap12WebService1_2Soap" binding="impl:soap12WebService1_2SoapSoapBinding">
+<wsdlsoap12:address location="https://cpd-cp4ba.apps.ocp.lab.lan/bawaut/teamworks/webservices/SOAPT/WebService1_2.tws"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

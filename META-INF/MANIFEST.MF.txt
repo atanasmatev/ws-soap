@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: 17.0.10 (Eclipse Adoptium)
+Main-Class: com.jpworks.datajdbc.MainApplication
+
