@@ -1,4 +1,4 @@
-FROM java:latest
+FROM image-registry.openshift-image-registry.svc:5000/openshift/java:latest
  
 LABEL base-image="java:latest" \
       java-version="latest" \
