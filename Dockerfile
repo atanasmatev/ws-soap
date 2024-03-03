@@ -1,14 +1,14 @@
-FROM openjdk:11.0.7-jre-slim-buster
+FROM java:latest
  
-LABEL base-image="openjdk:11.0.7-jre-slim-buster" \
-      java-version="11.0.7" \
-      purpose="Hello World with Java and Dockerfile"
+LABEL base-image="java:latest" \
+      java-version="latest" \
+      purpose="Java app"
  
 # set working directory at /deployments
 WORKDIR /deployments
  
 # copy my jar file
-COPY existing-app.jar app.jar
+COPY ws-employee-soapcxf-master.jar app.jar
  
 # gives uid
 USER 185
